@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "971484024249",
+    "project_id": "maui-fuelprice",
+    "storage_bucket": "maui-fuelprice.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971484024249:android:4da1e077ee18f741bfba68",
+        "android_client_info": {
+          "package_name": "com.companyname.phoneauth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtVnwFReTEiVW0Eq2s2E87sfutbkhFXYg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
