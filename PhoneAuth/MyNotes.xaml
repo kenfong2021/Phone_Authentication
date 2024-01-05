@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhoneAuth.MyNotes"
+             Title="MyNote">
+    <VerticalStackLayout>
+        <Entry x:Name="TitleEntry" Placeholder="Something to do..." />
+        <CollectionView ItemsSource="{Binding Notes}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding Remark}" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button
+            x:Name="btnSubmit"
+            Text="Save"
+            Clicked="btnSubmit_Clicked"
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

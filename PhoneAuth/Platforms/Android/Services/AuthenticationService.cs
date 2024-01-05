@@ -12,6 +12,7 @@ namespace PhoneAuth.Services
     {
         private TaskCompletionSource<bool> _verificationCodeCompletionSource;
         private string _verificationID;
+
         public Task<bool> AuthenticateMobile(string mobile)
         {
             _verificationCodeCompletionSource = new TaskCompletionSource<bool>();
@@ -42,13 +43,14 @@ namespace PhoneAuth.Services
             _verificationCodeCompletionSource.SetResult(false);
         }
 
-        public async Task<bool> ValidateOTP(string code)
+        public async Task<(bool verified,string userID)> ValidateOTP(string code)
         {
             bool returnValue = false;
-            if(!string.IsNullOrWhiteSpace(_verificationID)) 
+
+            if (!string.IsNullOrWhiteSpace(_verificationID)) 
             {
                 var credential = PhoneAuthProvider.GetCredential(_verificationID, code);
-
+                
                 await FirebaseAuth.Instance.SignInWithCredentialAsync(credential).ContinueWith((authTask) =>
                 {
                     if (authTask.IsFaulted || authTask.IsCanceled) 
@@ -59,7 +61,7 @@ namespace PhoneAuth.Services
                     returnValue = true;
                 });
             }
-            return returnValue;
+            return (returnValue, FirebaseAuth.Instance.CurrentUser.Uid);
         }
     }
 }

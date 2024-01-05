@@ -9,6 +9,6 @@ namespace PhoneAuth.Services
     public interface IAuthenticationService
     {
         Task<bool> AuthenticateMobile(string mobile);
-        Task<bool> ValidateOTP(string code);
+        Task<(bool verified, string userID)> ValidateOTP(string code);
     }
 }

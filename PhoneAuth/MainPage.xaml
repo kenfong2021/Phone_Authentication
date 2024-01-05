@@ -2,27 +2,271 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PhoneAuth.MainPage">
-
+    
     <ScrollView>
+
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
+            
             <VerticalStackLayout x:Name="pnlMobileInfo">
+                <StackLayout>
+                    <Picker x:Name="myDropdown"  Title="Select a Country" SelectedIndexChanged="myDropdown_SelectedIndexChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>93 --- Afghanistan</x:String>
+                                <x:String>355 --- Albania</x:String>
+                                <x:String>213 --- Algeria</x:String>
+                                <x:String>684 --- American Samoa</x:String>
+                                <x:String>376 --- Andorra</x:String>
+                                <x:String>244 --- Angola</x:String>
+                                <x:String>809 --- Anguilla</x:String>
+                                <x:String>268 --- Antigua</x:String>
+                                <x:String>54 --- Argentina</x:String>
+                                <x:String>374 --- Armenia</x:String>
+                                <x:String>297 --- Aruba</x:String>
+                                <x:String>247 --- Ascension Island</x:String>
+                                <x:String>61 --- Australia</x:String>
+                                <x:String>672 --- Australian External Territories</x:String>
+                                <x:String>43 --- Austria</x:String>
+                                <x:String>994 --- Azerbaijan</x:String>
+                                <x:String>242 --- Bahamas</x:String>
+                                <x:String>246 --- Barbados</x:String>
+                                <x:String>973 --- Bahrain</x:String>
+                                <x:String>880 --- Bangladesh</x:String>
+                                <x:String>375 --- Belarus</x:String>
+                                <x:String>32 --- Belgium</x:String>
+                                <x:String>501 --- Belize</x:String>
+                                <x:String>229 --- Benin</x:String>
+                                <x:String>809 --- Bermuda</x:String>
+                                <x:String>975 --- Bhutan</x:String>
+                                <x:String>284 --- British Virgin Islands</x:String>
+                                <x:String>591 --- Bolivia</x:String>
+                                <x:String>387 --- Bosnia and Hercegovina</x:String>
+                                <x:String>267 --- Botswana</x:String>
+                                <x:String>55 --- Brazil</x:String>
+                                <x:String>284 --- British V.I.</x:String>
+                                <x:String>673 --- Brunei Darussalm</x:String>
+                                <x:String>359 --- Bulgaria</x:String>
+                                <x:String>226 --- Burkina Faso</x:String>
+                                <x:String>257 --- Burundi</x:String>
+                                <x:String>855 --- Cambodia</x:String>
+                                <x:String>237 --- Cameroon</x:String>
+                                <x:String>1 --- Canada</x:String>
+                                <x:String>238 --- CapeVerde Islands</x:String>
+                                <x:String>1 --- Caribbean Nations</x:String>
+                                <x:String>345 --- Cayman Islands</x:String>
+                                <x:String>238 --- Cape Verdi</x:String>
+                                <x:String>236 --- Central African Republic</x:String>
+                                <x:String>235 --- Chad</x:String>
+                                <x:String>56 --- Chile</x:String>
+                                <x:String>86 --- China (People's Republic)</x:String>
+                                <x:String>886 --- China-Taiwan</x:String>
+                                <x:String>57 --- Colombia</x:String>
+                                <x:String>269 --- Comoros and Mayotte</x:String>
+                                <x:String>242 --- Congo</x:String>
+                                <x:String>682 --- Cook Islands</x:String>
+                                <x:String>506 --- Costa Rica</x:String>
+                                <x:String>385 --- Croatia</x:String>
+                                <x:String>53 --- Cuba</x:String>
+                                <x:String>357 --- Cyprus</x:String>
+                                <x:String>420 --- Czech Republic</x:String>
+                                <x:String>45 --- Denmark</x:String>
+                                <x:String>246 --- Diego Garcia</x:String>
+                                <x:String>767 --- Dominca</x:String>
+                                <x:String>809 --- Dominican Republic</x:String>
+                                <x:String>253 --- Djibouti</x:String>
+                                <x:String>593 --- Ecuador</x:String>
+                                <x:String>20 --- Egypt</x:String>
+                                <x:String>503 --- El Salvador</x:String>
+                                <x:String>240 --- Equatorial Guinea</x:String>
+                                <x:String>291 --- Eritrea</x:String>
+                                <x:String>372 --- Estonia</x:String>
+                                <x:String>251 --- Ethiopia</x:String>
+                                <x:String>500 --- Falkland Islands</x:String>
+                                <x:String>298 --- Faroe (Faeroe) Islands (Denmark)</x:String>
+                                <x:String>679 --- Fiji</x:String>
+                                <x:String>358 --- Finland</x:String>
+                                <x:String>33 --- France</x:String>
+                                <x:String>596 --- French Antilles</x:String>
+                                <x:String>594 --- French Guiana</x:String>
+                                <x:String>241 --- Gabon (Gabonese Republic)</x:String>
+                                <x:String>220 --- Gambia</x:String>
+                                <x:String>995 --- Georgia</x:String>
+                                <x:String>49 --- Germany</x:String>
+                                <x:String>233 --- Ghana</x:String>
+                                <x:String>350 --- Gibraltar</x:String>
+                                <x:String>30 --- Greece</x:String>
+                                <x:String>299 --- Greenland</x:String>
+                                <x:String>473 --- Grenada/Carricou</x:String>
+                                <x:String>671 --- Guam</x:String>
+                                <x:String>502 --- Guatemala</x:String>
+                                <x:String>224 --- Guinea</x:String>
+                                <x:String>245 --- Guinea-Bissau</x:String>
+                                <x:String>592 --- Guyana</x:String>
+                                <x:String>509 --- Haiti</x:String>
+                                <x:String>504 --- Honduras</x:String>
+                                <x:String>852 --- Hong Kong</x:String>
+                                <x:String>36 --- Hungary</x:String>
+                                <x:String>354 --- Iceland</x:String>
+                                <x:String>91 --- India</x:String>
+                                <x:String>62 --- Indonesia</x:String>
+                                <x:String>98 --- Iran</x:String>
+                                <x:String>964 --- Iraq</x:String>
+                                <x:String>353 --- Ireland (Irish Republic; Eire)</x:String>
+                                <x:String>972 --- Israel</x:String>
+                                <x:String>39 --- Italy</x:String>
+                                <x:String>225 --- Ivory Coast (La Cote d'Ivoire)</x:String>
+                                <x:String>876 --- Jamaica</x:String>
+                                <x:String>81 --- Japan</x:String>
+                                <x:String>962 --- Jordan</x:String>
+                                <x:String>7 --- Kazakhstan</x:String>
+                                <x:String>254 --- Kenya</x:String>
+                                <x:String>855 --- Khmer Republic (Cambodia/Kampuchea)</x:String>
+                                <x:String>686 --- Kiribati Republic (Gilbert Islands)</x:String>
+                                <x:String>82 --- Korea, Republic of (South Korea)</x:String>
+                                <x:String>850 --- Korea, People's Republic of (North Korea)</x:String>
+                                <x:String>965 --- Kuwait</x:String>
+                                <x:String>996 --- Kyrgyz Republic</x:String>
+                                <x:String>371 --- Latvia</x:String>
+                                <x:String>856 --- Laos</x:String>
+                                <x:String>961 --- Lebanon</x:String>
+                                <x:String>266 --- Lesotho</x:String>
+                                <x:String>231 --- Liberia</x:String>
+                                <x:String>370 --- Lithuania</x:String>
+                                <x:String>218 --- Libya</x:String>
+                                <x:String>423 --- Liechtenstein</x:String>
+                                <x:String>352 --- Luxembourg</x:String>
+                                <x:String>853 --- Macao</x:String>
+                                <x:String>389 --- Macedonia</x:String>
+                                <x:String>261 --- Madagascar</x:String>
+                                <x:String>265 --- Malawi</x:String>
+                                <x:String>60 --- Malaysia</x:String>
+                                <x:String>960 --- Maldives</x:String>
+                                <x:String>223 --- Mali</x:String>
+                                <x:String>356 --- Malta</x:String>
+                                <x:String>692 --- Marshall Islands</x:String>
+                                <x:String>596 --- Martinique (French Antilles)</x:String>
+                                <x:String>222 --- Mauritania</x:String>
+                                <x:String>230 --- Mauritius</x:String>
+                                <x:String>269 --- Mayolte</x:String>
+                                <x:String>52 --- Mexico</x:String>
+                                <x:String>691 --- Micronesia (F.S. of Polynesia)</x:String>
+                                <x:String>373 --- Moldova</x:String>
+                                <x:String>33 --- Monaco</x:String>
+                                <x:String>976 --- Mongolia</x:String>
+                                <x:String>473 --- Montserrat</x:String>
+                                <x:String>212 --- Morocco</x:String>
+                                <x:String>258 --- Mozambique</x:String>
+                                <x:String>95 --- Myanmar (former Burma)</x:String>
+                                <x:String>264 --- Namibia (former South-West Africa)</x:String>
+                                <x:String>674 --- Nauru</x:String>
+                                <x:String>977 --- Nepal</x:String>
+                                <x:String>31 --- Netherlands</x:String>
+                                <x:String>599 --- Netherlands Antilles</x:String>
+                                <x:String>869 --- Nevis</x:String>
+                                <x:String>687 --- New Caledonia</x:String>
+                                <x:String>64 --- New Zealand</x:String>
+                                <x:String>505 --- Nicaragua</x:String>
+                                <x:String>227 --- Niger</x:String>
+                                <x:String>234 --- Nigeria</x:String>
+                                <x:String>683 --- Niue</x:String>
+                                <x:String>850 --- North Korea</x:String>
+                                <x:String>1 670 --- North Mariana Islands (Saipan)</x:String>
+                                <x:String>47 --- Norway</x:String>
+                                <x:String>968 --- Oman</x:String>
+                                <x:String>92 --- Pakistan</x:String>
+                                <x:String>680 --- Palau</x:String>
+                                <x:String>507 --- Panama</x:String>
+                                <x:String>675 --- Papua New Guinea</x:String>
+                                <x:String>595 --- Paraguay</x:String>
+                                <x:String>51 --- Peru</x:String>
+                                <x:String>63 --- Philippines</x:String>
+                                <x:String>48 --- Poland</x:String>
+                                <x:String>351 --- Portugal (includes Azores)</x:String>
+                                <x:String>1 787 --- Puerto Rico</x:String>
+                                <x:String>974 --- Qatar</x:String>
+                                <x:String>262 --- Reunion (France)</x:String>
+                                <x:String>40 --- Romania</x:String>
+                                <x:String>7 --- Russia</x:String>
+                                <x:String>250 --- Rwanda (Rwandese Republic)</x:String>
+                                <x:String>670 --- Saipan</x:String>
+                                <x:String>378 --- San Marino</x:String>
+                                <x:String>239 --- Sao Tome and Principe</x:String>
+                                <x:String>966 --- Saudi Arabia</x:String>
+                                <x:String>221 --- Senegal</x:String>
+                                <x:String>381 --- Serbia and Montenegro</x:String>
+                                <x:String>248 --- Seychelles</x:String>
+                                <x:String>232 --- Sierra Leone</x:String>
+                                <x:String>65 --- Singapore</x:String>
+                                <x:String>421 --- Slovakia</x:String>
+                                <x:String>386 --- Slovenia</x:String>
+                                <x:String>677 --- Solomon Islands</x:String>
+                                <x:String>252 --- Somalia</x:String>
+                                <x:String>27 --- South Africa</x:String>
+                                <x:String>34 --- Spain</x:String>
+                                <x:String>94 --- Sri Lanka</x:String>
+                                <x:String>290 --- St. Helena</x:String>
+                                <x:String>869 --- St. Kitts/Nevis</x:String>
+                                <x:String>508 --- St. Pierre Miquelon (France)</x:String>
+                                <x:String>249 --- Sudan</x:String>
+                                <x:String>597 --- Suriname</x:String>
+                                <x:String>268 --- Swaziland</x:String>
+                                <x:String>46 --- Sweden</x:String>
+                                <x:String>41 --- Switzerland</x:String>
+                                <x:String>963 --- Syrian Arab Republic (Syria)</x:String>
+                                <x:String>689 --- Tahiti (French Polynesia)</x:String>
+                                <x:String>886 --- Taiwan</x:String>
+                                <x:String>7 --- Tajikistan</x:String>
+                                <x:String>255 --- Tanzania (includes Zanzibar)</x:String>
+                                <x:String>66 --- Thailand</x:String>
+                                <x:String>228 --- Togo (Togolese Republic)</x:String>
+                                <x:String>690 --- Tokelau</x:String>
+                                <x:String>676 --- Tonga</x:String>
+                                <x:String>1 868 --- Trinidad and Tobago</x:String>
+                                <x:String>216 --- Tunisia</x:String>
+                                <x:String>90 --- Turkey</x:String>
+                                <x:String>993 --- Turkmenistan</x:String>
+                                <x:String>688 --- Tuvalu (Ellice Islands)</x:String>
+                                <x:String>256 --- Uganda</x:String>
+                                <x:String>380 --- Ukraine</x:String>
+                                <x:String>971 --- United Arab Emirates</x:String>
+                                <x:String>44 --- United Kingdom</x:String>
+                                <x:String>598 --- Uruguay</x:String>
+                                <x:String>1 --- USA</x:String>
+                                <x:String>7 --- Uzbekistan</x:String>
+                                <x:String>678 --- Vanuatu (New Hebrides)</x:String>
+                                <x:String>39 --- Vatican City</x:String>
+                                <x:String>58 --- Venezuela</x:String>
+                                <x:String>84 --- Viet Nam</x:String>
+                                <x:String>1 340 --- Virgin Islands</x:String>
+                                <x:String>681 --- Wallis and Futuna</x:String>
+                                <x:String>685 --- Western Samoa</x:String>
+                                <x:String>381 --- Yemen (People's Democratic Republic of)</x:String>
+                                <x:String>967 --- Yemen Arab Republic (North Yemen)</x:String>
+                                <x:String>381 --- Yugoslavia (discontinued)</x:String>
+                                <x:String>243 --- Zaire</x:String>
+                                <x:String>260 --- Zambia</x:String>
+                                <x:String>263 --- Zimbabwe</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
                 <Entry x:Name="txtMobileNo"></Entry>
                 <Button
-        x:Name="btnSubmit"
-        Text="Submit"
-        Clicked="btnSubmit_Clicked"
-        HorizontalOptions="Center" />
+                x:Name="btnSubmit"
+                Text="Submit"
+                Clicked="btnSubmit_Clicked"
+                HorizontalOptions="Center" />
             </VerticalStackLayout>
 
             <VerticalStackLayout IsVisible="False" x:Name="pnlMobileVerification">
                 <Entry x:Name="txtCode"/>
                 <Button
-        x:Name="btnVerifyCode"
-        Text="Verify"
-        Clicked="btnVerifyCode_Clicked"
-        HorizontalOptions="Center" />
+                x:Name="btnVerifyCode"
+                Text="Verify"
+                Clicked="btnVerifyCode_Clicked"
+                HorizontalOptions="Center" />
             </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
