@@ -15,7 +15,7 @@ namespace PhoneAuth.Services
         }
          
 
-        public Task<bool> ValidateOTP(string code)
+        public Task<(bool verified, string userToken, string userID)> ValidateOTP(string code)
         {
             throw new NotImplementedException();
         }

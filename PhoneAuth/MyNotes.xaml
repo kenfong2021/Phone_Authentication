@@ -4,18 +4,30 @@
              x:Class="PhoneAuth.MyNotes"
              Title="MyNote">
     <VerticalStackLayout>
-        <Entry x:Name="TitleEntry" Placeholder="Something to do..." />
+        <HorizontalStackLayout>
+            <Entry x:Name="RemarkEntry" Placeholder="Something to do..." />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Button
+                x:Name="btnSubmit"
+                Text="Save"
+                Clicked="btnSubmit_Clicked"
+                HorizontalOptions="Center" />
+            <Button x:Name="btnClear" 
+                Text="Clear" 
+                Clicked="btnClear_Clicked"/>
+        </HorizontalStackLayout>
         <CollectionView ItemsSource="{Binding Notes}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Label Text="{Binding Remark}" />
+                    <Label Text="{Binding Remark}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="2"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Button
-            x:Name="btnSubmit"
-            Text="Save"
-            Clicked="btnSubmit_Clicked"
-            HorizontalOptions="Center" />
+        
     </VerticalStackLayout>
 </ContentPage>

@@ -44,7 +44,7 @@ namespace PhoneAuth
  
                 if (result.verified)
                 {
-                    await App.Current.MainPage.Navigation.PushAsync(new MyNotes(result.userID));
+                    await App.Current.MainPage.Navigation.PushAsync(new MyNotes(result.userToken,result.userID));
                 }
                 else
                 {

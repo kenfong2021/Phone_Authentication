@@ -8,6 +8,7 @@ namespace PhoneAuth.Models
 {
     public class Note
     {
+        public string Key { get; set; } = string.Empty;
         public string UID { get; set; } = string.Empty;
         public string Remark { get; set; } = string.Empty;
     }

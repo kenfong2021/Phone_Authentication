@@ -1,4 +1,6 @@
-﻿using Firebase;
+﻿using Android.Gms.Extensions;
+using Android.Gms.Tasks;
+using Firebase;
 using Firebase.Auth;
 using System;
 using System.Collections.Generic;
@@ -43,7 +45,7 @@ namespace PhoneAuth.Services
             _verificationCodeCompletionSource.SetResult(false);
         }
 
-        public async Task<(bool verified,string userID)> ValidateOTP(string code)
+        public async Task<(bool verified, string userToken, string userID)> ValidateOTP(string code)
         {
             bool returnValue = false;
 
@@ -61,7 +63,16 @@ namespace PhoneAuth.Services
                     returnValue = true;
                 });
             }
-            return (returnValue, FirebaseAuth.Instance.CurrentUser.Uid);
+
+            var user = FirebaseAuth.Instance.CurrentUser;
+
+            var token = await user.GetIdToken(true);
+            
+            var tokenString = (string)token?.GetType()?.GetProperty("Token")?.GetValue(token, null);
+
+            var id = FirebaseAuth.Instance.CurrentUser.Uid;
+
+            return (returnValue, tokenString, id);
         }
     }
 }
